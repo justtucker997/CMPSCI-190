@@ -1,6 +1,8 @@
 # CMPSCI-190
- COC Web Programming: Javascript
- 
+Web Programming: Javascript
+
+Justin Tucker
+
 [Assignment 1](assign1/index.html)
 
 

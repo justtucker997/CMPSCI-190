@@ -8,3 +8,7 @@ CMPSCI-190 Web Programming: Javascript
 [Chapter 3](ch3/index.html)
 
 [Chapter 4](ch4/index.html)
+
+[Chapter 5](ch5/index.html)
+
+[Chapter 6](ch6/index.html)

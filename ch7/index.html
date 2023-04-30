@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <h1>Card Game</h1>
+	<button onclick="dealCards()">Deal Cards</button>
+	<div id="cards"></div>
+    <script>
+        function Card(suit,face) {
+            this.suit = suit;
+            this.face = face;
+
+            this.setSuit = function(newSuit){
+                this.suit = newSuit;
+            };
+            
+            this.setFace = function(newFace){
+                this.face = newFace;
+            };
+        }
+
+        function dealCards() {
+            var suits = ["diamonds", "hearts", "spades", "clubs"];
+			var faces = ["ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "jack", "queen", "king"];
+            var cardsDiv = document.getElementById("cards");
+            cardsDiv.innerHTML = "";
+
+            for (var i = 0; i < 5; i++) {
+                var suitIndex = suits[Math.floor(Math.random() * 4)];
+                var faceIndex = faces[Math.floor(Math.random() * 13)];
+                var card = new Card(suitIndex,faceIndex);
+                var cardDiv = document.createElement("div");
+				cardDiv.innerHTML = card.face + " of " + card.suit;
+				cardsDiv.appendChild(cardDiv);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title><title>Card Game</title>
+	<script>
+		function Card(suit, face) {
+			this.suit = suit;
+			this.face = face;
+
+			// Method to set the value of suit
+			this.setSuit = function(newSuit) {
+				this.suit = newSuit;
+			};
+
+			// Method to set the value of face
+			this.setFace = function(newFace) {
+				this.face = newFace;
+			};
+		}
+
+		function createCard() {
+			// Get the user's input for suit and face
+			var suitInput = document.getElementById("suit").value;
+			var faceInput = document.getElementById("face").value;
+
+			// Create a new Card object with the user's input
+			var myCard = new Card(suitInput, faceInput);
+
+			// Display the card's properties
+			var output = "Suit: " + myCard.suit + "<br>";
+			output += "Face: " + myCard.face;
+			document.getElementById("card").innerHTML = output;
+		}
+	</script> 
+</head>
+<body>
+	<label for="suit">Enter suit:</label>
+	<input type="text" id="suit"><br>
+	<label for="face">Enter face:</label>
+	<input type="text" id="face"><br>
+	<button onclick="createCard()">Create Card</button>
+	<div id="card"></div>
+</body>
+</html>

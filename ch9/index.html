@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cancelling Default Behavior</title>
+	<script>
+		function checkform() {
+			document.getElementById("form1").onsubmit = function() {
+				var allowSubmit = true;
+				var nameField = document.getElementById("user").value;
+				var phoneField = document.getElementById("phone").value;
+				var errorMessage = "";
+				
+				if(nameField == "") {
+					errorMessage += "Name field cannot be blank\n";
+					allowSubmit = false;
+				}
+				
+				if(phoneField == "") {
+					errorMessage += "Phone field cannot be blank\n";
+					allowSubmit = false;
+				}
+				
+				if(!allowSubmit) alert(errorMessage);
+				else alert("Data OK - submitting form");
+				
+				return allowSubmit;	
+			}
+		}
+		window.onload = checkform;
+	</script>
+</head>
+<body>
+	<form id="form1">
+		Name: <input type="text" value="" name="username" id="user" /> [Required field]<br/>
+		Phone: <input type="text" value="" name="telephone" id="phone" /> [Required field]<br/>
+		<input type="submit" />
+	</form>	
+</body>
+</html>

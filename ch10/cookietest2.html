@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Testing</title>
+</head>	
+    <script src="cookies.js"></script>
+	<script>
+		window.onload = function() {
+			document.getElementById("output").innerHTML = "Your cookie value: " + getCookie("myCookieData");
+		}
+	</script>
+</head>
+<body>
+	<a href="cookietest.html">Back to Cookie Test Page 1</a><br/>
+	<div id="output"></div>
+</body>
+</html>

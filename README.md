@@ -19,5 +19,5 @@ CMPSCI-190 Web Programming: Javascript
 
 [Chapter 9](ch9/index.html)
 
-[Chapter 10](ch10/index.html)
+[Chapter 10](ch10/cookietest.html)
 

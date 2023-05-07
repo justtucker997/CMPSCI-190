@@ -5,16 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cookie Testing</title>
+</head>    
     <script src="cookies.js"></script>
     <script>
         window.onload = function() {
-            var cookieValue = getCookie("myCookieData");
-            var values = cookieValue ? cookieValue.split("#") : [];
-            var output = "";
-            for (var i = 0; i < values.length; i++) {
-                output += values[i] + "<br>";
+            var cookieValues = getCookie("myCookieData");
+            var output = document.getElementById("output");
+            for (var i = 0; i < cookieValues.length; i++) {
+                var div = document.createElement("div");
+                div.innerHTML = "Cookie Value " + (i + 1) + ": " + cookieValues[i];
+                output.appendChild(div);
             }
-            document.getElementById("output").innerHTML = "Your cookie values:<br>" + output;
         }
     </script>
 </head>

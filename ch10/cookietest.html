@@ -8,11 +8,8 @@
     <script src="cookies.js"></script>
     <script>
         window.onload = function() {
-            var cookieValues = [];
-            for (var i = 0; i < 3; i++) {
-                var value = prompt("Cookie Value " + (i + 1) + ":");
-                cookieValues.push(value);
-            }
+            var cookieValue = prompt("Enter cookie values separated by #:");
+            var cookieValues = cookieValue.split("#");
             createCookie("myCookieData", cookieValues);
         }
     </script>

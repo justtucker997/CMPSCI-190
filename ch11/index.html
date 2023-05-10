@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>To-Do List</title>
+	<script>
+		function countListItems() {
+			var olElement = document.getElementById("toDoList");
+			var listItems = olElement.getElementsByTagName("li");
+			alert("The ordered list contains " + listItems.length + " items");
+		}
+		window.onload = countListItems;
+
+        // Find HTML comments in body and concatenate them into a string
+        function getComments() {
+            var commentString = "";
+            var bodyElement = document.getElementsByTagName("body")[0];
+            var commentNodes = bodyElement.childNodes;
+            for (var i = 0; i < commentNodes.length; i++) {
+                if (commentNodes[i].nodeType == 8) {
+                    commentString += commentNodes[i].nodeValue;
+                }
+            }
+            alert(commentString);
+        }
+        window.onload = getComments;
+	</script>
+</head>
+<body>
+    <!-- To Do List Title -->
+	<h1>Things To Do</h1>
+    <!-- To Do List -->
+	<ol id="toDoList">
+        <!-- To Do List Items -->
+		<li>Mow the lawn</li>
+		<li>Clean the windows</li>
+		<li>Answer your email</li>
+	</ol>
+    <!-- To Do List Notes -->
+	<p id="toDoNotes">Make sure all these are completed by 8pm so you can watch the game on TV!</p>
+</body>
+</html>

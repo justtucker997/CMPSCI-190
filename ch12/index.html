@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Insert After Example</title>
+</head>
+<body>
+	<h1>Insert After Example</h1>
+	<p>Before the insertion</p>
+	<p id="target">I am the target node</p>
+	<button onclick="insertAfter(document.getElementById('newNode'), document.getElementById('target'))">Insert After</button>
+	<p id="newNode">I am the new node</p>
+	<p>After the insertion</p>
+
+	<script>
+		function insertAfter(newNode, targetNode) {
+			if (targetNode.nextSibling) {
+				targetNode.parentNode.insertBefore(newNode, targetNode.nextSibling);
+			} else {
+				targetNode.parentNode.appendChild(newNode);
+			}
+		}
+	</script>
+</body>
+</html>

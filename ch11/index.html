@@ -17,12 +17,12 @@
             var commentNodes = bodyElement.childNodes;
             for (var i = 0; i < commentNodes.length; i++) {
                 if (commentNodes[i].nodeType == 8) {
-                    commentString += commentNodes[i].nodeValue;
+                    commentString += commentNodes[i].nodeValue + "\n";
                 }
             }
             alert(commentString);
         }
-	</script>
+</script>
 </head>
 <body>
     <!-- To Do List Title -->

@@ -19,15 +19,17 @@ function callAjax() {
 	myRequest.send(null);
 }
 function responseAjax() {
-    if(myRequest.readyState == 4) {
-        if(myRequest.status == 200) {
-			var now = new Date();
-			var localTime = myRequest.getResponseHeader("Date");
-			var serverTime = myRequest.responseText;
-            document.getElementById("clock").innerHTML = "Server: " + serverTime + "<br />Local: " + localTime; 
+    if (myRequest.readyState == 4) {
+        if (myRequest.status == 200) {
+            var serverTimeString = myRequest.responseText;
+            var serverTime = new Date(serverTimeString);
+            var localTime = new Date();
+            
+            document.getElementById("clock").innerHTML = "Server: " + serverTime.toLocaleTimeString() + "<br />Local: " + localTime.toLocaleTimeString();
         } else {
             alert("An error has occurred: " + myRequest.statusText);
         }
     }
 }
+
 var myRequest = getXMLHttpRequest();

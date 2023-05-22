@@ -22,11 +22,10 @@ function callAjax() {
 function responseAjax() {
     if (myRequest.readyState == 4) {
         if (myRequest.status == 200) {
-            var serverTimeString = myRequest.responseText;
-            var serverTime = new Date(serverTimeString);
+            var serverTime = myRequest.responseText;
             var localTime = new Date();
             
-            document.getElementById("clock").innerHTML = "Server: " + serverTime.toLocaleTimeString() + "<br />Local: " + localTime.toLocaleTimeString();
+            document.getElementById("clock").innerHTML = "Server: " + serverTime + "<br />Local: " + localTime.toLocaleTimeString();
         } else {
             alert("An error has occurred: " + myRequest.statusText);
         }

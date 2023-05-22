@@ -12,12 +12,13 @@ function getXMLHttpRequest() {
 	}
 }
 function callAjax() {
-	var url = "clock.php";
-	var myRandom = parseInt(Math.random()*99999999);
-	myRequest. open("GET", url + "?rand=" + myRandom, true);
-	myRequest.onreadystatechange = responseAjax;
-	myRequest.send(null);
+    var url = "clock.php";
+    var myRandom = parseInt(Math.random() * 99999999);
+    myRequest.open("GET", url + "?rand=" + myRandom, true);
+    myRequest.onreadystatechange = responseAjax;
+    myRequest.send(null);
 }
+
 function responseAjax() {
     if (myRequest.readyState == 4) {
         if (myRequest.status == 200) {

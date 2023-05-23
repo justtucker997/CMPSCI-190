@@ -32,3 +32,5 @@ CMPSCI-190 Web Programming: Javascript
 [Chapter 15](ch15/index.html)
 
 [Chapter 16](ch16/index.html)
+
+[Chapter 17](ch17/index.html)

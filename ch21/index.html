@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" type="text/css" href="ch21/jquery-ui-themes-1.13.2/themes/ui-darkness/theme.css"> 
+<link rel="stylesheet" type="text/css" href="jquery-ui-themes-1.13.2/themes/ui-darkness/theme.css"> 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
 
@@ -13,7 +13,37 @@
             $("#accordion").accordion();
         });
     </script>
-    <title>Menu Choices</title>
+<script>
+    $(function() {
+        $("#dragdiv").draggable();
+        $("#dropdiv").droppable({
+            drop: function() { $("#dragdiv").text("Dropped!"); },
+            out: function() { $("#dragdiv").text("Off and running again ..."); }
+        });
+    });
+</script>
+<style>
+    div {
+        font: 12px normal arial, helvetica;
+    }
+    #dragdiv {
+        width: 150px;
+        height: 50px;
+        background-color: #eeffee;
+        border: 1px solid black;
+        padding: 5px;
+    }
+    #dropdiv {
+        margin-top: 20 px;
+        top: 80px;
+        left: 100px;
+        width: 300px;
+        height: 200px;
+        border: 1px solid black;
+        padding: 5px;
+    }
+</style>
+    <title>ch21</title>
 </head>
 <body>
     <h2>Choose from the following menu options:</h2>
@@ -46,5 +76,11 @@
         </ul>
     </div>
 </div>
+<br>
+<div>
+    <div id="dropdiv">This is the drop zone ...</div>
+    <div id="dragdiv">Drag this element around the page!</div>
+</div>
+
 </body>
 </html>

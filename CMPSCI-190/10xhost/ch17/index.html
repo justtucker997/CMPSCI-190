@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Keywords Grabber</title>
+	<script src="myAjaxLib.js"></script>
+	<script>
+		function display(content) {
+			document.getElementById("displaydiv").innerHTML = content;
+		}
+		function showLoadingMessage() {
+			document.getElementById("displaydiv").innerHTML = "Loading keywords...";
+		}
+		function fetchKeywords() {
+			showLoadingMessage(); // Show loading message
+			var url = document.getElementById("txt1").value;
+			doAjax("metatags.php", "url=" + url, "display", "post", 0);
+		}
+		window.onload = function() {
+			document.getElementById("btn1").onclick = function(){
+			fetchKeywords(); // Fetch keywords initially
+			}
+		}
+	</script>
+</head>
+<body>
+	http://<input type="text" id="txt1" value="" />
+	<input type="button" id="btn1" value="Get Keywords" />
+	<h3>Keywords Received:</h3>
+	<div id="displaydiv"></div>
+</body>
+</html>
